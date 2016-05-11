@@ -2,7 +2,9 @@
   "name": "foody-fw",
   "private": true,
   "dependencies": {
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "angular": "~1.5.5",
+    "angular-resource": "^1.5.5"
   },
   "devDependencies": {
     "chai": "~3.5.0",
