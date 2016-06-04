@@ -1,0 +1,62 @@
+<div ng-controller="createEmployeeLoginController">
+<h3> 
+</h3>
+<div class="panel panel-primary">
+    <div class="panel-heading">Create Employee Login</div>
+	<div class="panel-body">
+		<form name="createEmployeeLoginForm"  class="form-horizontal" role="form">
+			<table style="border-spacing:100px">
+				<tr>
+					<td width="30%">
+						<label for="employeeEmailId">Enter Email ID</label>
+					</td>
+					<td width="10%"> &nbsp;
+					</td>
+					<td>
+						<input type="email" class="form-control" name="employeeEmailId" id="employeeEmailId"  ng-model="data.employeeEmailId" required>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td width="30%">
+						<label for="employeePassword">Enter Password</label>
+					</td>
+					<td width="10%"> &nbsp;
+					</td>
+					<td>
+						<input type="password" class="form-control" name="employeePassword" id="employeePassword" ng-model="data.employeePassword" required>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td width="40%">
+						<label for="employeePin">Enter Pin</label>
+					</td>
+					<td width="10%"> &nbsp;
+					</td>
+					<td>
+						<input type="password" class="form-control" name="employeePin" id="employeePin" ng-model="data.employeePin" required>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center">
+						<button type="submit" class="btn btn-primary ">Create Employee Account</button>
+					</td>
+				</tr>
+			</table>
+
+			<br>			<br>	
+			
+		</form>
+	</div>
+</div>

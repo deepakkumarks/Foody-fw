@@ -1,0 +1,62 @@
+<div ng-controller="createRestaurantLoginController">
+<h3> 
+</h3>
+<div class="panel panel-primary">
+    <div class="panel-heading">Create Restaurant Login</div>
+	<div class="panel-body">
+		<form name="createRestaurantLoginForm"  class="form-horizontal" role="form">
+			<table style="border-spacing:100px">
+				<tr>
+					<td width="30%">
+						<label for="restaurantEmailId">Enter Email ID</label>
+					</td>
+					<td width="10%"> &nbsp;
+					</td>
+					<td>
+						<input type="email" class="form-control" name="restaurantEmailId" id="restaurantEmailId"  ng-model="data.restaurantEmailId" required>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td width="40%">
+						<label for="restaurantPassword">Enter Password</label>
+					</td>
+					<td width="10%"> &nbsp;
+					</td>
+					<td>
+						<input type="password" class="form-control" name="restaurantPassword" id="restaurantPassword" ng-model="data.restaurantPassword" required>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;
+					</td>
+				</tr>
+<!-- 				<tr>
+					<td width="40%">
+						<label for="restaurantPin">Enter Pin</label>
+					</td>
+					<td width="10%"> &nbsp;
+					</td>
+					<td>
+						<input type="password" class="form-control" name="restaurantPin" id="restaurantPin" ng-model="data.restaurantPin" required>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;
+					</td>
+				</tr> -->
+				<tr>
+					<td colspan="3" align="center">
+						<button type="submit" class="btn btn-primary ">Create Restaurant Account</button>
+					</td>
+				</tr>
+			</table>
+
+			<br>			<br>	
+			
+		</form>
+	</div>
+</div>

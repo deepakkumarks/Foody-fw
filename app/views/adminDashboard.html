@@ -1,0 +1,60 @@
+<div ng-controller="adminDashboardController">
+ 
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+    	<div class="panel panel-primary">
+    		<div class="panel-heading">Quick Links</div>
+  			<div class="panel-body list-group">
+  			  <a  class="list-group-item">Address & Contact Information</a>
+  			  <a href="#" class="list-group-item">Login to any Restautrant</a>
+  			  <a ui-sref="dashboard.createRestaurantLogin" class="list-group-item">Create Restautrant Login</a>
+  			  <a href="#" class="list-group-item">Update Restautrant Login</a>
+  			  <a ui-sref="dashboard.createEmployeeLogin" class="list-group-item">Create Employee Access</a>
+  			  <a href="#" class="list-group-item">Payment Gateway Details</a>
+  			  <a href="#" class="list-group-item">View Feedback</a>
+  			  <a href="#" class="list-group-item">Check Order Details</a>
+			   </div>
+		</div>
+    </div>
+    <div class="col-sm-6 text-left"> 
+      <h5>{{heading}}</h5>
+      <div ui-view="">
+      </div>
+    </div>
+    <div class="col-sm-3 sidenav">
+      <div class="panel panel-primary">
+    		<div class="panel-heading">Reports</div>
+    		<div class="panel-body" >
+    			<div style="float:left;">
+    			 Sales Reports
+    			</div>
+	    		<div style="float:left;">
+					<nav align="left">
+						<u><a href="#" >Daily Summary Report</a></u><br>
+						<u><a href="#" >Weekly Summry Report</a></u><br>
+						<u><a href="#" >Monthly Summary Report</a></u>
+						<br><a><hr></a>
+					</nav>
+	    		</div>
+	    		
+	    		<div style="float:left;">
+    			Payment Reports
+    			</div>
+	    		<div style="float:left;">
+					<nav align="left">
+						<u><a href="#" >Payment Summary Report</a></u>
+					</nav>
+	    		</div>
+	    		<hr/>
+    		</div>
+		</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+</div>

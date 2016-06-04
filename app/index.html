@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="" ng-app="foody">
+<html lang="" ng-app="foodyApp">
 
 <head>
     <meta charset="utf-8">
@@ -11,44 +11,37 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.less">
     <!-- endbuild -->
 </head>
 
-<body>
+<body ng-style="{'background-image':'url(/images/basicBackgroundImage.png)'}">
     <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-	<div class="container" ng-controller="mainCntrl">
-			<div class="panel panel-default">
-				<div class="panel-heading">{{heading}}</div>
-				<div class="panel-body">
-					<form>
-						<div class="form-group">
-						<label for="username">Username</label>
-						<input type="text" class="form-control" id="username" placeholder="Email" ng-model="form.email" >
-						</div>
-						<div class="form-group">
-						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1"  ng-model="form.pwd" placeholder="Password">
-						</div>
-						<button type="submit" class="btn btn-default" ng-click="checkValidation()">Login</button>
-							<button type="submit" class="btn btn-default" ng-click="reset()">Reset</button>
-					</form>
 
-						<h1 class="label label-success" ng-if="login.success">Success</h1>
-						<h1 class="label label-danger" ng-if="login.failed">Danger</h1>
-		</div>
+	<div class="container">   
+     <div ng-include="'/views/header.html'">
+     </div>  
+        <div>
+			<div ui-view>
+				
 			</div>
+        </div>
 	</div>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-clock/dist/angular-clock.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -70,6 +63,14 @@
     </script>
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/pageNavigation.js"></script>
+    <!--Login Page Controller and Services -->
+    <script src="scripts/controller/loginController.js"></script>
+    <script src="scripts/services/loginServices.js"></script>
+
+    <script src="scripts/controller/adminDashboardController.js"></script>
+
+    <script src="scripts/controller/createEmployeeLoginController.js"></script>
     <!-- endbuild -->
 </body>
 

@@ -1,0 +1,41 @@
+<div ng-controller="loginController">
+<!-- 	<h3>
+		<font color="silver"><u><sub>Foody 360</sub></u></font>
+		<sup><img src="images/icons/chefHat.png"></sup>
+	</h3> -->
+	<!--<h5 style="float:right;">Admin Page</h5>-->
+
+	<!-- <div ng-include="'/views/header.html'">
+	</div> -->
+	<div class="panel panel-default">
+		<div class="panel-heading">{{heading}}</div>
+		<div class="panel-body ">
+
+		<form name="loginForm" ng-submit="loginSubmit()">
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" class="form-control" name="username" id="username" placeholder="username" ng-model="data.username" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" name="password" id="password" ng-model="data.password" placeholder="Password" required>
+			</div>
+			<div class="form-group">
+				<label for="pin">Pin</label>
+				<input type="password" class="form-control" name="pin" id="pin" ng-model="data.pin" required>
+			</div>
+			<div style="float:right;">
+				<a herf="" ng-click="loginReset()"><font color="black">Reset</font></a>
+			</div>
+			<br>			<br>	
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+			<br>
+			<div style="float:left;">
+				<a herf="" ng-click="forgotPassword()"><font color="black">Forgot Password</font></a>
+			</div>
+
+		</form>
+		</div>
+		<div class="alert alert-danger text-center" ng-show="isInvalidUser" role="alert"> {{ inValidUserMsg }} </div>
+	</div>
+</div>
