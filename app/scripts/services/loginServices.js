@@ -2,20 +2,33 @@ foodyMainApp.factory("loginServices", ['$http', '$rootScope', '$location', funct
 	return {
         authenticateUser: function(user, scope) {
             alert("welcome user:" +  user.username);
-            if(user.username == 'admin'){
-            	var loginUser= $http.get("http://localhost:8080/RESTfulExample/rest/hello/ufff");
+         if(user.username == 'admin'){
+            	var loginUser = $http.post("http://localhost:8080/RESTfulExample/rest/login/verifyDetailsForAdminLogin", user);
 				loginUser.then(function(msg){	
 					var userID = msg.data;			
 					alert("return data:" + userID);
-					alert("return data:" + loginUser);
-					alert("return data:" + msg);
-					alert("return data:" + sg.data);
-
+					alert("return data:" + msg.data);
 				});
 				scope.$emit('loginSuccess'); 
 			}else{
 				scope.$emit('loginFailure'); 
 			}
+
+
+   //          if(user.username == 'admin'){
+   //          	var loginUser = $http.get("http://localhost:8080/RESTfulExample/rest/login/ufff");
+			// 	loginUser.then(function(msg){	
+			// 		var userID = msg.data;			
+			// 		alert("return data:" + userID);
+			// 		alert("return data:" + loginUser);
+			// 		alert("return data:" + msg);
+			// 		alert("return data:" + msg.data);
+
+			// 	});
+			// 	scope.$emit('loginSuccess'); 
+			// }else{
+			// 	scope.$emit('loginFailure'); 
+			// }
         }
 
     };
