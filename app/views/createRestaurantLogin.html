@@ -4,7 +4,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">Create Restaurant Login</div>
 	<div class="panel-body">
-		<form name="createRestaurantLoginForm"  class="form-horizontal" role="form">
+		<form name="createRestaurantLoginForm"  class="form-horizontal" role="form" ng-submit="createRestaurantLogin()" >
 			<table style="border-spacing:100px">
 				<tr>
 					<td width="30%">
@@ -15,6 +15,10 @@
 					<td>
 						<input type="email" class="form-control" name="restaurantEmailId" id="restaurantEmailId"  ng-model="data.restaurantEmailId" required>
 					</td>
+<!-- 					<div ng-messages="createRestaurantLoginForm.restaurantEmailId.$error">
+					  <div ng-message="required">This field is required</div>
+					  <div ng-message="email">Your email address is invalid</div>
+					</div> -->
 				</tr>
 				<tr>
 					<td colspan="3">&nbsp;
@@ -29,6 +33,9 @@
 					<td>
 						<input type="password" class="form-control" name="restaurantPassword" id="restaurantPassword" ng-model="data.restaurantPassword" required>
 					</td>
+					<div ng-messages="createRestaurantLoginForm.restaurantPassword.$error">
+					  <div ng-message="required">This field is required</div>
+					</div>
 				</tr>
 				<tr>
 					<td colspan="3">&nbsp;

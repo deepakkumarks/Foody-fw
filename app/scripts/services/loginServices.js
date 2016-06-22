@@ -1,61 +1,28 @@
 foodyMainApp.factory("loginServices", ['$http', '$rootScope', '$location', function($http, $rootScope, $location){
 	return {
         authenticateUser: function(user, scope) {
-            alert("welcome user:" +  user.username);
-         if(user.username == 'admin'){
-            	var loginUser = $http.post("http://localhost:8080/RESTfulExample/rest/login/verifyDetailsForAdminLogin", user);
-				loginUser.then(function(msg){	
-					var userID = msg.data;			
-					alert("return data:" + userID);
-					alert("return data:" + msg.data);
-				});
-				scope.$emit('loginSuccess'); 
-			}else{
-				scope.$emit('loginFailure'); 
-			}
-
-
-   //          if(user.username == 'admin'){
-   //          	var loginUser = $http.get("http://localhost:8080/RESTfulExample/rest/login/ufff");
-			// 	loginUser.then(function(msg){	
-			// 		var userID = msg.data;			
-			// 		alert("return data:" + userID);
-			// 		alert("return data:" + loginUser);
-			// 		alert("return data:" + msg);
-			// 		alert("return data:" + msg.data);
-
-			// 	});
-			// 	scope.$emit('loginSuccess'); 
-			// }else{
-			// 	scope.$emit('loginFailure'); 
-			// }
-        }
-
-    };
-
-
-	// return{
-	// 	authenticateUser:function(user, scope){
-	// 		var loginUser= $http.post("php/api/getUsers.php?method=validateUser&jsoncallback=", user);
-	// 		loginUser.then(function(msg){	
-	// 			var userID = parseInt(msg.data)			
-	// 			if(userID){
-	// 				sessionServices.set('user', user); 
-	// 				scope.$emit('loginSuccess'); 
-	// 			}else{
-	// 				scope.$emit('loginFailure'); 
-	// 			}
-	// 		});
-	// 		},
+            //alert("welcome user:" +  user.username);
+        	var authenticateUserProcess = $http.post(restUrlMain+loginService_verifyDetailsForLogin, user);
 			
-	// 	 logOutUser:function(){
-	// 		 sessionServices.destory('user');
-	// 		 $rootScope.$broadcast('showHideNaveBar', [false]);
-			 
-	// 	 },
-	// 	 islogged:function(){
-	// 		 if(sessionServices.get('user')) return true;
-	// 	 }
-
-	// 	}
+			authenticateUserProcess.success(function(responseData){
+				user = responseData;
+				// alert("Reponse data:" +  user.username);
+				if(user.statusCode == "1"){
+					// alert("Reponse data:" +  user.statusMessage);
+					scope.$emit('loginSuccess'); 
+				} else {
+					if(user.errorBean.errorCode != "0"){
+						// alert("Reponse data:" +  user.errorBean.errorMessage);
+						scope.$emit('loginFailure'); 
+					} else {
+						alert("Response says no error");
+					}
+					
+				}
+			});
+			authenticateUserProcess.error(function(responseData){
+				alert("Reponse Error" + responseData);
+			});
+        }
+    };
 }]);
