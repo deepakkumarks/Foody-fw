@@ -1,14 +1,20 @@
-foodyMainApp.controller('createRestaurantLoginController', ['$scope', '$location', function($scope, $location){
+foodyMainApp.controller('createRestaurantLoginController', ['$scope', '$location', 'restaurantServices', function($scope, $location, restaurantServices){
 	$scope.heading = "Create Resturant Login";
-	$scope.restaurant.restaurantEmailId = $scope.data.restaurantEmailId;
-	$scope.restaurant.restaurantPassword = $scope.data.restaurantPassword;
+	$scope.restaurant={};
+
 	
 	$scope.createRestaurantLogin = function(){
-		createRestaurantLoginServices.createRestaurantLogin($scope.restaurant, $scope);
+		$scope.restaurant.restaurantEmailId = $scope.data.restaurantEmailId;
+		$scope.restaurant.restaurantPassword = $scope.data.restaurantPassword;
+		restaurantServices.createRestaurantLogin($scope.restaurant, $scope);
 	}
 
+	$scope.$on('createRestaurantLoginSuccess', function(event){
+		alert("New Restaurant Login Created Successfully!!!");
+	});
+
+	$scope.$on('createRestaurantLoginFailure', function(event){
+		alert("New Restaurant Login Created Failed!!!");
+	});
 }]);
 
-$scope.on('createRestaurantLoginSuccess', function(event){
-	alert("New Restaurant Login Created Successfully!!!");
-});

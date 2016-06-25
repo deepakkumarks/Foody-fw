@@ -1,4 +1,4 @@
-foodyMainApp.factory("createRestaurantLoginServices", ['$http', '$rootscope' function ($http, $rootscope){
+foodyMainApp.factory('restaurantServices', ['$http', '$rootScope', function ($http, $rootScope){
 	return {
         createRestaurantLogin: function(restaurantLoginDetails, scope) {
             //alert("welcome user:" +  user.username);
@@ -7,7 +7,7 @@ foodyMainApp.factory("createRestaurantLoginServices", ['$http', '$rootscope' fun
 			createRestaurantLoginProcess.success(function(responseData){
 				statusBean = responseData;
 				// alert("Reponse data:" +  user.username);
-				if(statusBean.statusCode == "1"){
+				if(statusBean.statusCode != "10"){
 					// alert("Reponse data:" +  user.statusMessage);
 					scope.$emit('createRestaurantLoginSuccess'); 
 				} else {
